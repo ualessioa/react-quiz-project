@@ -32,12 +32,13 @@ export default function Question({index, onSelectAnswer, onSkipAnswer}){
             selectedAnswer: answer,
             isCorrect: QUESTIONS[index].answers[0] === answer
             })
+            setTimeout(() => {
+                onSelectAnswer(answer)
+            }, 2000)
         }, 1000)
 
        
-        setTimeout(() => {
-            onSelectAnswer(answer)
-        }, 3000)
+        
     }
 
     let answerState = ''
